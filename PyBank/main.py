@@ -52,3 +52,12 @@ print(f' Total: ${profit}')
 print(f' Average Change: {avg_change}')
 print(f' Greatest Increase in Profits: {increase} (${greatestI})')
 print(f' Greatest Decrease in Profits: {decrease} (${greatestD})\n')
+
+#Output to Text File in Analysis Folder
+txt_file = open("analysis\Result.txt","w")
+txt_file.write("Financial Analysis \n ----------------------------\n")
+txt_file.write(f' Total Months: {month_count}\n')
+txt_file.write(f' Average Change: {avg_change}\n')
+txt_file.write(f' Greatest Increase in Profits: {increase} (${greatestI})\n')
+txt_file.write(f' Greatest Decrease in Profits: {decrease} (${greatestD})\n')
+txt_file.close()

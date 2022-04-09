@@ -43,3 +43,23 @@ print("-------------------------")
 
 
 print(f"Winner: {winner_name}\n-------------------------\n")
+
+#Output to Text File in Analysis Folder
+txt_file = open("analysis\Result.txt","w")
+
+txt_file.write("Election Results\n-------------------------\n")
+txt_file.write(f"Total Votes: {len(candidates)}\n-------------------------\n")
+
+for name,count in votes.items():
+    percent = count/len(candidates)
+    percent = "{:.3%}".format(percent)
+    txt_file.write(f"{name}: {percent} ({count})\n")
+
+    if count > winner:
+        winner_name = name
+        winner = count
+
+txt_file.write("-------------------------\n")
+txt_file.write(f"Winner: {winner_name}\n-------------------------\n")
+
+txt_file.close()
